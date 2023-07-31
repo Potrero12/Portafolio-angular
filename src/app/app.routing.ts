@@ -8,7 +8,7 @@ import { ErrorComponent } from "./components/error/error.component";
 import { ProjectsComponent } from "./components/projects/projects.component";
 
 const routes: Routes = [
-    { path: '', component: AboutComponent },
+    { path: 'about', component: AboutComponent },
     { path: 'projects', component: ProjectsComponent },
     { path: 'create-project', component: CreateComponent },
     { path: 'contact', component: ContactComponent },

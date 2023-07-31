@@ -1,8 +1,16 @@
-<h1>Proyecto de Portafolio</h1>
-<ul>
-  <a [routerLink]="['/about']">About</a>
-  <a [routerLink]="['/projects']">Projects</a>
-  <a [routerLink]="['/create-project']">Create Project</a>
-  <a [routerLink]="['/contact']">Contact</a>
-</ul>
-<router-outlet></router-outlet>
+<header>
+  <ul>
+    <li><a [routerLink]="['/about']" [routerLinkActive]="['active']">About</a></li>
+    <li><a [routerLink]="['/projects']" [routerLinkActive]="['active']">Projects</a></li>
+    <li id="logo"><a [routerLink]="['/about']">JP</a></li>
+    <li><a [routerLink]="['/create-project']" [routerLinkActive]="['active']">Create Project</a></li>
+    <li><a [routerLink]="['/contact']" [routerLinkActive]="['active']">Contact</a></li>
+  </ul>
+</header>
+<section id="content">
+  <router-outlet></router-outlet>
+</section>
+
+<footer>
+  Master en JavaScript Portafolio Angular &copy;
+</footer>
