@@ -5,7 +5,9 @@ import { Observable } from "rxjs";
 import { Project } from "../model/Project.model";
 import { global } from "./global";
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class ProjectService {
 
     public url:string;
@@ -21,7 +23,14 @@ export class ProjectService {
     }
 
     getProjects():Observable<any>{
-        return this._http.get(this.url);
+        let headers = new HttpHeaders({'Content-Type' : 'application/json'});
+        return this._http.get(this.url + 'get-projects', {headers: headers});
+    }
+
+    saveProject(project:Project):Observable<any>{
+        let params = JSON.stringify(project);
+        let headers = new HttpHeaders({'Content-Type' : 'application/json'});
+        return this._http.post(this.url + 'save-project', params,  {headers: headers});
     }
 
 }

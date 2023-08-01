@@ -1,1 +1,50 @@
-<p>create works!</p>
+<div class="container">
+    <h2>{{title}}</h2>
+
+    <div *ngIf="status === 'success'" class="message success">
+        Project Created Correctly
+    </div>
+
+    <div *ngIf="status === 'failed'" class="message failed">
+        Error creating the project
+    </div>
+
+    <form  #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+        <p>
+            <label for="name">Name</label>
+            <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" placeholder="Name" required/>
+            <span class="form_error" *ngIf="name.touched && !name.valid">Name is required</span>
+        </p>
+
+        <p>
+            <label for="description">Description</label>
+            <textarea name="description" #description="ngModel" [(ngModel)]="project.description" placeholder="Description" required></textarea>
+            <span class="form_error" *ngIf="description.touched && !description.valid">Description is required</span>
+        </p>
+
+        <p>
+            <label for="category">Category</label>
+            <input type="text" name="category" #category="ngModel" [(ngModel)]="project.category" placeholder="Category" required/>
+            <span class="form_error" *ngIf="category.touched && !category.valid">Category is required</span>
+        </p>
+
+        <p>
+            <label for="year">Year</label>
+            <input type="number" name="year" #year="ngModel" [(ngModel)]="project.year" placeholder="Year" required/>
+            <span class="form_error" *ngIf="year.touched && !year.valid">Year is required</span>
+        </p>
+
+        <p>
+            <label for="langs">Langs</label>
+            <input type="text" name="langs" #langs="ngModel" [(ngModel)]="project.langs" placeholder="Langs" required/>
+            <span class="form_error" *ngIf="langs.touched && !langs.valid">Langs is required</span>
+        </p>
+
+        <p>
+            <label for="image">Year</label>
+            <input type="file" name="image" #image="ngModel" [(ngModel)]="project.image" (change)="fileChangeEvent($event)"/>
+        </p>
+
+        <input type="submit" value="Creat Project" [disabled]="!projectForm.form.valid"/>
+    </form>
+</div>
