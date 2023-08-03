@@ -18,8 +18,9 @@ export class ProjectService {
         this.url = global.url;
     }
 
-    getProject(){
-        
+    getProject(id:any):Observable<any>{
+        let headers = new HttpHeaders({'Content-Type' : 'application/json'});
+        return this._http.get(this.url + 'get-project/'+id, {headers: headers});
     }
 
     getProjects():Observable<any>{

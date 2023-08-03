@@ -117,7 +117,9 @@ form textarea {
 }
 
 form button,
-form input[type="submit"] {
+form input[type="submit"],
+.button-edit,
+.button-delete {
     display: block;
     margin-top: 15px;
     font-size: 18px;
@@ -125,6 +127,26 @@ form input[type="submit"] {
     color: white;
     background-color: rgba(53, 103, 164, 0.8);
     border: 1px solid rgba(13, 67, 133, 0.8);
+}
+
+.button-edit,
+.button-delete {
+    width: 40%;
+    float: left;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.button-edit {
+    background-color: orange;
+    border: 1px solid orange;
+    border-radius: 5px;
+}
+
+.button-delete {
+    background-color: red;
+    border: 1px solid red;
+    border-radius: 5px;
 }
 
 form button,
@@ -178,6 +200,21 @@ form input[disabled] {
     display: block;
 }
 
+.container .image {
+    float: left;
+    width: 49%;
+}
+
+.container .image img{
+    width: 100%;
+}
+
+.container .data {
+    float: left;
+    width: 48%;
+    margin-left: 25px;
+}
+
 /* pagina de mostrar proyectos */
 
 .project {
@@ -199,6 +236,11 @@ form input[disabled] {
 
 .project img{
     width: 100%;
+}
+
+.project a {
+    text-decoration: none;
+    color: black;
 }
 
 /* pie de pagina */

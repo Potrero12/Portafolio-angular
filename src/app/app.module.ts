@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app.routing';
 
@@ -10,7 +11,7 @@ import { CreateComponent } from './components/create/create.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ErrorComponent } from './components/error/error.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { DetailComponent } from './components/detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +19,9 @@ import { HttpClientModule } from '@angular/common/http';
     AboutComponent,
     CreateComponent,
     ContactComponent,
-    ProjectsComponent,
+    DetailComponent,
     ErrorComponent,
+    ProjectsComponent,
   ],
   imports: [
     AppRoutingModule,
