@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { Project } from '../../model/Project.model';
 import { global } from '../../services/global';
@@ -14,6 +14,7 @@ export class DetailComponent implements OnInit{
 
   public project:Project;
   public url:string;
+  public confirm:boolean;
 
   constructor(
     private _projectService: ProjectService,
@@ -22,6 +23,7 @@ export class DetailComponent implements OnInit{
   ){
     this.url = global.url;
     this.project = new Project('', '', '', '', 2019, '', '');
+    this.confirm = false;
   }
 
   ngOnInit(): void {
@@ -37,5 +39,16 @@ export class DetailComponent implements OnInit{
     this._projectService.getProject(id).subscribe(({projectDB}) => {
       this.project = projectDB;
     });
+  }
+
+  deleteProject(id:any){
+    this._projectService.deleteProject(id).subscribe((response) => {
+      console.log(response);
+      this._router.navigateByUrl('projects');
+    });
+  }
+
+  setConfirm(confirm){
+    this.confirm = confirm;
   }
 }

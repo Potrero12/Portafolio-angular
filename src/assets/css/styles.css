@@ -141,12 +141,20 @@ form input[type="submit"],
     background-color: orange;
     border: 1px solid orange;
     border-radius: 5px;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .button-delete {
     background-color: red;
     border: 1px solid red;
     border-radius: 5px;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 form button,
@@ -241,6 +249,12 @@ form input[disabled] {
 .project a {
     text-decoration: none;
     color: black;
+}
+
+.confirm {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
 /* pie de pagina */
